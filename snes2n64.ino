@@ -364,11 +364,6 @@ void loop()
     //memset(gc_raw_dump, 0, sizeof(gc_raw_dump));
     //memset(n64_raw_dump, 0, sizeof(n64_raw_dump));
 
-    // turn on the led, so we can visually see things are happening
-    digitalWrite(13, LOW);
-    // don't want interrupts getting in the way
-    digitalWrite(13, HIGH);
-
     // Get SNES controller data
     snes_get();
     // translate the data to the n64 byte string
