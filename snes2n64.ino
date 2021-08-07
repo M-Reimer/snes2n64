@@ -142,16 +142,16 @@ static void snes_to_64()
     // First byte in n64_buffer should contain:
     // A, B, Z, Start, Dup, Ddown, Dleft, Dright
     //                                            SNES -> 64
-    n64_buffer[0] |= (snes_data[BTN_A])     << 7; // A -> A
-    n64_buffer[0] |= (snes_data[BTN_B])     << 6; // B -> B
-    n64_buffer[0] |= (snes_data[BTN_Y])     << 5; // Y -> Z
-    n64_buffer[0] |= (snes_data[BTN_START]) << 4; // S -> S
     if (!snes_data[BTN_SELECT]) {
-      n64_buffer[0] |= (snes_data[BTN_UP])    << 3; // D pad up and down
-      n64_buffer[0] |= (snes_data[BTN_DOWN])  << 2; // D pad right
-      n64_buffer[0] |= (snes_data[BTN_LEFT])  << 1; // D pad left
-      n64_buffer[0] |= (snes_data[BTN_RIGHT]) << 0; // D pad left
+      n64_buffer[0] |= (snes_data[BTN_A])     << 7; // A -> A
+      n64_buffer[0] |= (snes_data[BTN_B])     << 6; // B -> B
+      n64_buffer[0] |= (snes_data[BTN_Y])     << 5; // Y -> Z
     }
+    n64_buffer[0] |= (snes_data[BTN_START]) << 4; // S -> S
+    n64_buffer[0] |= (snes_data[BTN_UP])    << 3; // D pad up
+    n64_buffer[0] |= (snes_data[BTN_DOWN])  << 2; // D pad down
+    n64_buffer[0] |= (snes_data[BTN_LEFT])  << 1; // D pad left
+    n64_buffer[0] |= (snes_data[BTN_RIGHT]) << 0; // D pad right
 
     // Second byte to N64 should contain:
     // 0, 0, L, R, Cup, Cdown, Cleft, Cright
@@ -159,10 +159,10 @@ static void snes_to_64()
     n64_buffer[1] |= (snes_data[BTN_L]) << 5; // L -> L
     n64_buffer[1] |= (snes_data[BTN_R]) << 4; // R -> R
     if (snes_data[BTN_SELECT]) {
-      n64_buffer[1] |= (snes_data[BTN_UP])    << 3; // D pad up and down
-      n64_buffer[1] |= (snes_data[BTN_DOWN])  << 2; // D pad right
-      n64_buffer[1] |= (snes_data[BTN_LEFT])  << 1; // D pad left
-      n64_buffer[1] |= (snes_data[BTN_RIGHT]) << 0; // D pad left
+      n64_buffer[1] |= (snes_data[BTN_X]) << 3; // Cup
+      n64_buffer[1] |= (snes_data[BTN_B]) << 2; // Cdown
+      n64_buffer[1] |= (snes_data[BTN_Y]) << 1; // Cleft
+      n64_buffer[1] |= (snes_data[BTN_A]) << 0; // Cright
     }
 
 /*
