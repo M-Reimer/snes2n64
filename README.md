@@ -15,6 +15,7 @@ This is an extensive list of what's required.
 # Quick setup
 
 ![Pinout of N64 plug and SNES socket](connections.svg)
+
 Figure 1: Pinout of the N64 plug and the SNES socket
 
 ##  Hooking the N64 to the Arduino
@@ -43,13 +44,13 @@ You can upload the project to your Arduino using the Arduino IDE. Then connect t
 
 ## Final product
 
-# Used components
+### Used components
 
 I decided to use the Arduino Nano because it is very small and can be placed between the two connectors without taking up too much space.
 
 I wanted to power the adapter directly from the 3.3 V supply coming from the N64. To make this possible I use a small step up converter module configured to output 5 V.
 
-# Protection
+### Protection
 
 When using the N64 power supply and using a step up converter (which could, at least in theory, malfunction and output a way too high voltage) I decided that it may be a good idea to protect my retro hardware from potential malfunctions in my circuit.
 
